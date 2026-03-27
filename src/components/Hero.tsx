@@ -2,9 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import dynamic from "next/dynamic";
-
-const ModelViewer = dynamic(() => import("./ModelViewer"), { ssr: false });
+import ModelViewer from "./ModelViewer";
 
 export default function Hero() {
   const ref = useRef(null);
@@ -29,8 +27,8 @@ export default function Hero() {
       </motion.div>
 
       {/* Gradient overlays */}
-      <div className="absolute inset-0 z-10 bg-gradient-to-b from-[#0C0A08]/60 via-transparent to-[#0C0A08]" />
-      <div className="absolute inset-0 z-10 bg-gradient-to-r from-[#0C0A08]/50 via-transparent to-transparent" />
+      <div className="absolute inset-0 z-10 bg-gradient-to-b from-[#0C0A08]/40 via-transparent to-[#0C0A08]/80" />
+      <div className="absolute inset-0 z-10 bg-gradient-to-r from-[#0C0A08]/30 via-transparent to-transparent" />
 
       {/* Decorative corner lines */}
       <div className="absolute top-8 left-8 w-16 h-16 md:w-24 md:h-24 border-t border-l border-accent/20 z-20" />
@@ -48,39 +46,39 @@ export default function Hero() {
           className="mb-6 md:mb-8 flex items-center gap-3 md:gap-4"
         >
           <div className="w-8 md:w-12 h-[1px] bg-accent" />
-          <span className="text-accent text-[10px] md:text-xs tracking-[0.3em] md:tracking-[0.4em] uppercase font-light font-display">
+          <span className="text-accent text-xs md:text-sm tracking-[0.3em] md:tracking-[0.4em] uppercase font-normal font-display">
             Studentka Architektury
           </span>
         </motion.div>
 
-        <div className="overflow-hidden">
-          <motion.h1
-            initial={{ y: 140 }}
-            animate={{ y: 0 }}
+        <h1>
+          <motion.span
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{
               duration: 1.2,
               ease: [0.16, 1, 0.3, 1],
               delay: 0.3,
             }}
-            className="font-serif text-5xl sm:text-6xl md:text-8xl lg:text-9xl xl:text-[10rem] font-medium leading-[0.85] tracking-tight"
+            className="block font-serif text-5xl sm:text-6xl md:text-8xl lg:text-9xl xl:text-[10rem] font-medium tracking-tight pb-1"
+            style={{ textShadow: "0 2px 30px rgba(0,0,0,0.5)", lineHeight: 1.15 }}
           >
             Anna
-          </motion.h1>
-        </div>
-        <div className="overflow-hidden mt-1">
-          <motion.h1
-            initial={{ y: 140 }}
-            animate={{ y: 0 }}
+          </motion.span>
+          <motion.span
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{
               duration: 1.2,
               ease: [0.16, 1, 0.3, 1],
               delay: 0.45,
             }}
-            className="font-serif text-5xl sm:text-6xl md:text-8xl lg:text-9xl xl:text-[10rem] font-medium leading-[0.85] tracking-tight text-gradient-warm"
+            className="block font-serif text-5xl sm:text-6xl md:text-8xl lg:text-9xl xl:text-[10rem] font-medium tracking-tight text-gradient-warm pb-3"
+            style={{ lineHeight: 1.15 }}
           >
             Dygulska
-          </motion.h1>
-        </div>
+          </motion.span>
+        </h1>
 
         <motion.p
           initial={{ opacity: 0, y: 30 }}

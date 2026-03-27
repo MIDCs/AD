@@ -32,19 +32,7 @@ export default function Footer() {
             <span className="text-accent inline-block group-hover:scale-150 transition-transform duration-300">.</span>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-8">
-            {["LinkedIn", "Behance", "Instagram"].map((s) => (
-              <a
-                key={s}
-                href="#"
-                className="text-muted/50 text-xs hover:text-accent transition-colors tracking-wider font-display uppercase"
-              >
-                {s}
-              </a>
-            ))}
-          </div>
-
-          <div className="text-muted/40 text-xs text-center md:text-right font-display tracking-wider">
+<div className="text-muted/40 text-xs text-center md:text-right font-display tracking-wider">
             &copy; {new Date().getFullYear()} Anna Dygulska
           </div>
         </div>
