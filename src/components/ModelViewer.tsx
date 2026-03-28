@@ -42,7 +42,6 @@ export default function ModelViewer({ className = "" }: { className?: string }) 
       <video
         ref={videoRef}
         autoPlay
-        loop
         muted
         playsInline
         preload="auto"
