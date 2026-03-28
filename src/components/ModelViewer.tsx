@@ -38,15 +38,19 @@ export default function ModelViewer({ className = "" }: { className?: string }) 
         </div>
       )}
 
+      {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
       <video
         ref={videoRef}
         autoPlay
+        loop
         muted
         playsInline
         preload="auto"
-        className={`w-full h-full object-cover transition-opacity duration-1000 ${
+        controls={false}
+        className={`w-full h-full object-cover transition-opacity duration-1000 [&::-webkit-media-controls]:hidden [&::-webkit-media-controls-enclosure]:hidden [&::-webkit-media-controls-panel]:hidden ${
           loaded ? "opacity-100" : "opacity-0"
         }`}
+        style={{ pointerEvents: "none" }}
       >
         <source src="/hero.mp4" type="video/mp4" />
       </video>
